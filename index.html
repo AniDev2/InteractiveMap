@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Interaktywna mapa województw</title>
+  </head>
+  <body>
+    <div class="map">
+      <img src="./Photos/map.png" alt="Mapa województw Polski" />
+      <ul>
+        <li class="zachodnio-pomorskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_zachodniopomorskie"
+            ><span class="visually-hidden">zachodniopomorskie</span></a
+          >
+        </li>
+       <li class="pomorskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_pomorskie"
+            ><span class="visually-hidden">pomorskie</span></a
+          >
+       </li>
+        <li class="warminsko-mazurskie">
+          <a
+            href="https://pl.wikipedia.org/wiki/Województwo_warmińsko-mazurskie"
+            ><span class="visually-hidden">warmińsko-mazurskie</span></a
+          >
+        </li>
+        <li class="podlaskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_podlaskie"
+            ><span class="visually-hidden">podlaskie</span></a
+          >
+        </li>
+        <li class="lubuskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_lubuskie"
+            ><span class="visually-hidden">lubuskie</span></a
+          >
+        </li>
+        <li class="wielkopolskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_wielkopolskie"
+            ><span class="visually-hidden">wielkopolskie</span></a
+          >
+        </li>
+        <li class="kujawsko-pomorskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_kujawsko-pomorskie"
+            ><span class="visually-hidden">kujawsko-pomorskie</span></a
+          >
+        </li>
+        <li class="mazowieckie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_mazowieckie"
+            ><span class="visually-hidden">mazowieckie</span></a
+          >
+            </li>
+        <li class="dolnoslaskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_dolnośląskie"
+            ><span class="visually-hidden">dolnośląskie</span></a
+          >
+        </li>
+        <li class="lodzkie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_łódzkie"
+            ><span class="visually-hidden">łódzkie</span></a
+          >
+        </li>
+        <li class="opolskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_opolskie"
+            ><span class="visually-hidden">opolskie</span></a
+          >
+        </li>
+        <li class="slaskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_śląskie"
+            ><span class="visually-hidden">śląskie</span></a
+          >
+        </li>
+        <li class="swietokrzyskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_świętokrzyskie"
+            ><span class="visually-hidden">świętokrzyskie</span></a
+          >
+        </li>
+        <li class="lubelskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_lubelskie"
+            ><span class="visually-hidden">lubelskie</span></a
+          >
+        </li>
+        <li class="malopolskie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_małopolskie"
+            ><span class="visually-hidden">małopolskie</span></a
+          >
+        </li>
+        <li class="podkarpackie">
+          <a href="https://pl.wikipedia.org/wiki/Województwo_podkarpackie"
+            ><span class="visually-hidden">podkarpackie</span></a
+          >
+        </li>
+        </li>
+      </ul>
+    </div>
+    <script>
+     const iframe = document.createElement("iframe");
+
+      iframe.src =
+        "https://pl.wikipedia.org/wiki/Województwo_zachodniopomorskie";
+
+      document.body.prepend(iframe);
+
+      document.querySelector(".map").addEventListener("click", (ev) => {
+        if (ev.target.matches("a[href]")) {
+          ev.preventDefault();
+          window.location.hash = `#${ev.target.innerText}`;
+          iframe.src = ev.target.getAttribute("href");
+        }
+      }); 
+    </script>
+  </body>
+</html>
